@@ -191,7 +191,7 @@ class EventSource:
 
     async def connect(self, retry=0):
         """Connect to resource."""
-        _LOGGER.debug('connect')
+        _LOGGER.error('connect')
         headers = self._kwargs['headers']
 
         # For HTTP connections, the Accept header may be included;
