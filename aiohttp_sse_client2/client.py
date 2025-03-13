@@ -155,6 +155,7 @@ class EventSource:
         # async for ... in StreamReader only split line by \n
         while self._response.status != 204:
             async for line_in_bytes in self._response.content:
+                _LOGGER.debug(line_in_bytes)
                 line = line_in_bytes.decode('utf8')  # type: str
                 line = line.rstrip('\n').rstrip('\r')
 
